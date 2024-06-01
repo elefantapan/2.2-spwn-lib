@@ -1,0 +1,18 @@
+extract obj_props
+extract $
+
+impl @group {
+  scale: (self, x: @number = 1, y: @number = 1, let center_gid: @number = 0, /*optional*/ onlmove: @bool = false ) {
+    if(center_gid == 0) {
+      center_gid = self
+    }
+    $.add(trigger {  
+        71: center_gid, // center group id
+        51: self, // target group
+        1: 2067, // Object id
+        150: x, // Scale x
+        151: y, // scale y
+        133: onlmove, // only move
+    })
+  },
+}
